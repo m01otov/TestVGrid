@@ -10,7 +10,9 @@ import SwiftUI
 struct ContentView: View {
 
     var columns = [
-        GridItem(.fixed(150))
+//        GridItem(.fixed(150))
+        GridItem(.adaptive(minimum: 30)),
+        GridItem(.flexible())
     ]
 
     var body: some View {
@@ -22,7 +24,6 @@ struct ContentView: View {
                         .foregroundColor(.blue)
                 }
             }
-
         }
     }
 }
