@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    var columns = [
+//        GridItem(.fixed(150))
+        GridItem(.adaptive(minimum: 30)),
+        GridItem(.flexible())
+    ]
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ScrollView(.vertical,showsIndicators: false) {
+            LazyVGrid(columns: columns) {
+                ForEach(0..<50) { index in
+                    Rectangle()
+                        .frame(height: 50)
+                        .foregroundColor(.blue)
+                }
+            }
+        }
     }
 }
 
